@@ -164,13 +164,16 @@
                         <span class="contact__text">27 pringle road Mandara, Harare</span>
                     </div>
 
-                    <form action="" class="contact__form">
+                    <form method="post" class="contact__form">
+                         {% csrf_token %}
+                        {{ form.as_p }}
+
                         <div class="contact__inputs">
-                            <input type="text" placeholder="Name" class="contact__input">
-                            <input type="email" placeholder="Email" class="contact__input">
+                            <input type="text" id="name" name="name" placeholder="Name" class="contact__input">
+                            <input type="email" id="email"  name="email" placeholder="Email"   class="contact__input">
                         </div>
 
-                        <textarea name="" id="message" cols="0" rows="10" class="contact__input"></textarea>
+                        <textarea name="message" id="message" placeholder="Message" cols="0" rows="10" class="contact__input"></textarea>
 
                         <input type="submit" value="Submit" class="contact__button">
                     </form>
